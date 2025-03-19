@@ -29,7 +29,6 @@ pub mod voting {
 
         let candidate = &mut ctx.accounts.candidate;
         let _poll = &mut ctx.accounts.poll;
-
         candidate.candidate_name = candidate_name;
         candidate.candidate_votes = 0;
         Ok(())
