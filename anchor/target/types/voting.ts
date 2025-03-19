@@ -148,7 +148,6 @@ export type Voting = {
         },
         {
           "name": "poll",
-          "writable": true,
           "pda": {
             "seeds": [
               {
@@ -160,6 +159,7 @@ export type Voting = {
         },
         {
           "name": "candidate",
+          "writable": true,
           "pda": {
             "seeds": [
               {

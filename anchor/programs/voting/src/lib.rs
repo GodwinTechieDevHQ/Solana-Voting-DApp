@@ -48,7 +48,6 @@ pub struct Vote<'info>
     pub signer: Signer<'info>,
 
     #[account(
-        mut,
         seeds = [poll_id.to_le_bytes().as_ref()],
         bump, 
     )]
@@ -56,6 +55,7 @@ pub struct Vote<'info>
     pub poll: Account<'info, Poll>,
 
     #[account(
+        mut,
         seeds = [poll_id.to_le_bytes().as_ref(), candidate_name.as_bytes()],
         bump, 
     )]
