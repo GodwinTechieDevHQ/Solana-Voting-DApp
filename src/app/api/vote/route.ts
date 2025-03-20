@@ -29,7 +29,10 @@ export async function POST(request: Request) {
   const url = new URL(request.url);
   const candidate = url.searchParams.get("candidate");
   
-  if candidate !== "crunchy" && candidate !== "smooth") {
+  if (candidate !== "crunchy" && candidate !== "smooth") {
     return Response.error("Invalid candidate", { status: 400, headers: ACTIONS_CORS_HEADERS });
   }
+
+  const connection = new Connection("https://api.devnet.solana.com", "confirmed");
+
 }
