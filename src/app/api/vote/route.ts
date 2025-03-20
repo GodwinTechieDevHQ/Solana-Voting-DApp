@@ -1,5 +1,6 @@
 import { ActionGetResponse, ACTIONS_CORS_HEADERS } from "@solana/actions"
 
+
 export const OPTIONS = GET;
 
 export async function GET(request: Request) {
@@ -20,7 +21,15 @@ export async function GET(request: Request) {
         }
       ]
     }
-
   };
   return Response.json(actionMetadata, { headers: ACTIONS_CORS_HEADERS}); 
+}
+
+export async function POST(request: Request) {
+  const url = new URL(request.url);
+  const candidate = url.searchParams.get("candidate");
+  
+  if candidate !== "crunchy" && candidate !== "smooth") {
+    return Response.error("Invalid candidate", { status: 400, headers: ACTIONS_CORS_HEADERS });
+  }
 }
