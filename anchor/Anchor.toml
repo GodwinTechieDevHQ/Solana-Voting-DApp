@@ -5,15 +5,16 @@ anchor_version = "0.30.1"
 resolution = true
 skip-lint = false
 
-[programs.localnet]
-voting = "GUtDaoZ3HDC22sbtEanTQmeg2ajNK5KDkvm4gCk9B4eY"
-
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "Localnet"
-wallet = "~/.config/solana/id.json"
+cluster = "devnet"
+wallet = "/home/godwin/Documents/projects/Rust/solana/voting-dapp/anchor/my-wallet.json"
+
+
+[programs.devnet]
+voting = "DRdyieoiH5TQHHoHCx4C7MSR9UVgqUSNufW78bNqtQGZ"
 
 [scripts]
 test = "../node_modules/.bin/jest --preset ts-jest"
